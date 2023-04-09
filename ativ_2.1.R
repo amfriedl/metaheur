@@ -31,7 +31,7 @@ theta_a <- matrix(rnorm(3),ncol = 1)
 theta_b <- rnorm(1)
 
 #taxa de aprendizagem
-alpha <- 0.5
+alpha <- 0.8
 
 #iteração
 while(erro > 0.01 & iter < max_iter){
