@@ -19,6 +19,8 @@ dados <- matrix(
   nrow = 13, ncol = 2, byrow = TRUE
 )
 
+#normalização dos dados 
+dados[,2]<-dados[,2]/max(dados[,2])
 
 #inicialização de variáveis
 max_iter <- 1000
