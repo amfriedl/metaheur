@@ -18,7 +18,6 @@ dados <- matrix(
   ),
   nrow = 13, ncol = 2, byrow = TRUE
 )
-
 #normalização dos dados 
 dados[,2]<-dados[,2]/max(dados[,2])
 
@@ -104,3 +103,14 @@ iter <- iter + 1
 
 print(erro)
 }
+
+#"desnormalizando" dados e saídas
+y_normal <-y_erro_iteracao*10.02
+d_normal <- d_erro_iteracao*10.02
+erro_normal <- 0
+
+for(k in 1:13){
+erro_normal <- (d_normal[k,1] - y_normal[k,1])^2
+}
+
+erro_normal<- 0.5*erro_normal
