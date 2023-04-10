@@ -28,7 +28,7 @@ erro_ant <- 0
 dif_erro <- 1
 
 #para cálculo do erro quadrático
-y_erro_iteracao <- matrix(0,8,1)
+y_erro_iteracao <- matrix(0,13,1)
 d_erro_iteracao <- matrix(dados[,2],nrow = 13)
 
 #pesos aleatórios
@@ -40,11 +40,11 @@ theta_a <- matrix(rnorm(2),ncol = 1)
 theta_b <- rnorm(1)
 
 #taxa de aprendizagem
-alpha <- 0.5
+alpha <- 0.9
 
 #iteração
 while(erro > 0.01 & iter < max_iter & abs(dif_erro) > 0.0001){
-for(i in 1:8){
+for(i in 1:13){
 
 x<-matrix(dados[i,1],nrow = 1, ncol = 1, byrow = TRUE)
 
@@ -88,7 +88,7 @@ y_erro_iteracao[i,1] <- y
 #cálculo do erro quadrático
 erro <- 0
 
-for(j in 1:8){
+for(j in 1:13){
   erro <- erro + (d_erro_iteracao[j,1]-y_erro_iteracao[j,1])^2
 }
 erro <- 0.5*erro
